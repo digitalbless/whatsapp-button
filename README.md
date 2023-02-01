@@ -52,3 +52,36 @@
 - Passo 4:  Por ultimo, escolha sua imagem e adicione ao seus arquivos no shopify, vá em "configurações" canto inferior esquerdo, depois em "arquivos", e insira sua imagem, depois do upload feito, clique no gerador de link do lado, "O icone com o símbolo do clipe de papel", volte no arquivo theme.liquid, e vá onde você colou o trecho do código do Passo 3, altere a linha descrita na imagem abaixo;
 
 <img  src="https://user-images.githubusercontent.com/105664296/216109535-b5e7410e-3f4c-4052-b3b6-d6e37afd359e.png"/>
+
+
+# Disponibilizando o botão pelo personalizar
+
+- Passo 1 :  Ainda no editar código, vá em "config", depois em "settings_schema.json" e insira esse código no final do arquivo depois da ultima chave, insira uma " , " e cole esse código abaixo;
+
+      		 {
+    				 "name": "WhatsApp",
+    				 "settings": [
+    				 {
+    				 "type": "text",
+    				 "id": "whatsapp_icon_number",
+    				 "label": "Whatsapp Number",
+    				 "default": "971000000000"
+    				 },
+    				 {
+    				 "type": "text",
+    				 "id": "whatsapp_icon_image",
+    				 "label": "Whatsapp Image Link",
+    				 "default": "LINK"
+    				 }
+    				 ]
+    				 }
+
+###### Obs: a tag default:"LINK" é onde você deve colocar o link da imagem que você importou anteriormente.
+
+- Passo 2: Volte no arquivo theme.liquid e onde você inseriu o código anterior faça essas alterações;
+
+         <div class="lp-whatsapp-icon-bar">
+          <a href="https://api.whatsapp.com/send?phone={{settings.whatsapp_icon_number}}">
+           <img src="{{settings.whatsapp_icon_image}}" width="60">
+          </a>
+         </div>
