@@ -87,7 +87,7 @@
 
 - Passo 2: Volte no arquivo theme.liquid e onde você inseriu o código anterior faça essas alterações;
 
-         <div class="lp-whatsapp-icon-bar">
+         <div class="lp-whatsapp-icon-container">
           <a href="https://api.whatsapp.com/send?phone={{settings.whatsapp_icon_number}}">
            <img src="{{settings.whatsapp_icon_image}}" width="60">
           </a>
