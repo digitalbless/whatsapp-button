@@ -19,6 +19,7 @@
 - Passo 1: Acesse seu tema e entre em "Loja Virtual", clique nos "..." no seu tema e vá em "Editar Código".
 - Passo 2: Acesse primeiramente o theme.css e insira esse techo de código 
 
+    		
     		.lp-whatsapp-icon-container {
     		   position: fixed !important;
     		   right: 50px;
@@ -28,6 +29,12 @@
     		   transform: translateY(-50%);
     		   z-index: 9999999999999999;
     		}
+      
+            @media screen and (max-width:749px) {
+               .lp-whatsapp-icon-container {
+               display: none;
+             }
+            }
     
     		  .lp-whatsapp-icon-bar a {
     		  border: 1px solid #A8A8A8;
@@ -40,7 +47,7 @@
     		 scale: 1.025;
     		 transition: all 0.3s ease;
     		}
-
+      
 - Passo 3: Acesse o theme.liquid e insira esse código de preferencia no final do arquivo, porém dentro do body e do html como as imagens acima exemplificam.
 
      		 <div class="lp-whatsapp-icon-container">
